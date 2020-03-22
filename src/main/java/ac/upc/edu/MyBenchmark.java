@@ -34,19 +34,21 @@ package ac.upc.edu;
 import org.jdmp.core.algorithm.classification.bayes.NaiveBayesClassifier;
 import org.jdmp.core.dataset.DataSet;
 import org.jdmp.core.dataset.ListDataSet;
-import org.openjdk.jmh.annotations.Benchmark;
+import org.openjdk.jmh.annotations.*;
+
+import java.util.concurrent.TimeUnit;
+
+@BenchmarkMode(Mode.AverageTime)
+@OutputTimeUnit(TimeUnit.MILLISECONDS)
+@State(Scope.Benchmark)
+@Fork(value = 2, jvmArgs = {"-Xms2G", "-Xmx2G"})
 
 public class MyBenchmark {
 
-    @Benchmark
+    // EXAMPLE NAIVE BAYES
     public void testMethod() {
         // This is a demo/sample template for building your JMH benchmarks. Edit as needed.
         // Put your benchmark code here
-    }
-
-    public static void main(String[] args) {
-        System.out.println("This is a test");
-
         // load example data set
         ListDataSet dataSet = DataSet.Factory.IRIS();
 
@@ -65,4 +67,17 @@ public class MyBenchmark {
         System.out.println("accuracy: " + accuracy);
     }
 
+    // @Benchmark
+    @BenchmarkMode(Mode.All)
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
+    public void irisDataSetCreation() {
+        DataSet.Factory.IRIS();
+    }
+
+    // @Benchmark
+    @BenchmarkMode(Mode.All)
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
+    public void animalsDataSetCreation() {
+        DataSet.Factory.ANIMALS();
+    }
 }
