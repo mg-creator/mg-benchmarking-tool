@@ -67,14 +67,14 @@ public class MyBenchmark {
         System.out.println("accuracy: " + accuracy);
     }
 
-    // @Benchmark
+    @Benchmark
     @BenchmarkMode(Mode.All)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public void irisDataSetCreation() {
         DataSet.Factory.IRIS();
     }
 
-    // @Benchmark
+    @Benchmark
     @BenchmarkMode(Mode.All)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public void animalsDataSetCreation() {
