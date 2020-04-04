@@ -38,8 +38,8 @@ import org.openjdk.jmh.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
-@BenchmarkMode(Mode.AverageTime)
-@OutputTimeUnit(TimeUnit.MILLISECONDS)
+@BenchmarkMode(Mode.All)
+@OutputTimeUnit(TimeUnit.MICROSECONDS)
 @State(Scope.Benchmark)
 @Fork(value = 2, jvmArgs = {"-Xms2G", "-Xmx2G"})
 
@@ -68,13 +68,17 @@ public class MyBenchmark {
     }
 
     @Benchmark
-    @BenchmarkMode(Mode.All)
+    @Warmup(iterations = 1)
+    @Measurement(iterations = 2)
+    @BenchmarkMode(Mode.AverageTime)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public void irisDataSetCreation() {
         DataSet.Factory.IRIS();
     }
 
     @Benchmark
+    @Warmup(iterations = 1)
+    @Measurement(iterations = 2)
     @BenchmarkMode(Mode.All)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public void animalsDataSetCreation() {
