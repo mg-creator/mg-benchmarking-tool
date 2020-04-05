@@ -84,9 +84,9 @@ public class MyBenchmark {
 
     @Setup
     public void setup() throws Exception {
-        postTrainKNN.trainAll(ANIMALS);
-        postTrainDT.trainAll(ANIMALS);
-        postTrainLR.trainAll(ANIMALS);
+        postTrainKNN.trainAll(IRIS);
+        postTrainDT.trainAll(IRIS);
+        postTrainLR.trainAll(IRIS);
         preTrainKMEANS = new WekaClusterer(WekaClusterer.WekaClustererType.SimpleKMeans, false);
         postTrainKMEANS = new WekaClusterer(WekaClusterer.WekaClustererType.SimpleKMeans, false);
         postTrainKMEANS.train(IRIS);
@@ -98,7 +98,7 @@ public class MyBenchmark {
     @BenchmarkMode(Mode.AverageTime)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public void trainKNN() {
-        preTrainKNN.trainAll(ANIMALS);
+        preTrainKNN.trainAll(IRIS);
     }
 
     @Benchmark
@@ -107,7 +107,7 @@ public class MyBenchmark {
     @BenchmarkMode(Mode.AverageTime)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public void predictKNN() {
-        postTrainKNN.predictAll(ANIMALS);
+        postTrainKNN.predictAll(IRIS);
     }
 
     @Benchmark
@@ -116,7 +116,7 @@ public class MyBenchmark {
     @BenchmarkMode(Mode.AverageTime)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public void trainDT() {
-        preTrainDT.trainAll(ANIMALS);
+        preTrainDT.trainAll(IRIS);
     }
 
     @Benchmark
@@ -125,7 +125,7 @@ public class MyBenchmark {
     @BenchmarkMode(Mode.AverageTime)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public void predictDT() {
-        postTrainDT.predictAll(ANIMALS);
+        postTrainDT.predictAll(IRIS);
     }
 
     @Benchmark
@@ -134,7 +134,7 @@ public class MyBenchmark {
     @BenchmarkMode(Mode.AverageTime)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public void trainLR() {
-        preTrainLR.trainAll(ANIMALS);
+        preTrainLR.trainAll(IRIS);
     }
 
     @Benchmark
@@ -143,7 +143,7 @@ public class MyBenchmark {
     @BenchmarkMode(Mode.AverageTime)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public void predictLR() {
-        postTrainLR.predictAll(ANIMALS);
+        postTrainLR.predictAll(IRIS);
     }
 
     @Benchmark
