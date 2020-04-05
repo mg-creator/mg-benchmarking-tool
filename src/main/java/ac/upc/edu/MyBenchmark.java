@@ -35,9 +35,12 @@ import org.jdmp.core.algorithm.classification.KNNClassifier;
 import org.jdmp.core.algorithm.classification.bayes.NaiveBayesClassifier;
 import org.jdmp.core.dataset.DataSet;
 import org.jdmp.core.dataset.ListDataSet;
+import org.jdmp.mallet.classifier.MalletClassifier;
 import org.openjdk.jmh.annotations.*;
 
 import java.util.concurrent.TimeUnit;
+
+import static org.jdmp.mallet.classifier.MalletClassifier.MalletClassifiers.DecisionTree;
 
 @BenchmarkMode(Mode.All)
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
@@ -56,6 +59,29 @@ public class MyBenchmark {
 
         // Create the classifier - for the sake of this example we will use
         KNNClassifier classifier = new KNNClassifier(5);
+
+        // Train the classifier using all data
+        classifier.trainAll(dataSet);
+
+        // Use the classifier to make predictions
+        classifier.predictAll(dataSet);
+
+        // Get the results - no needed for benchmark purposes
+        // double accuracy = dataSet.getAccuracy();
+
+        // System.out.println("accuracy: " + accuracy);
+    }
+
+    // EXAMPLE DECISION TREE USAGE
+    public void decisionTreeExample() {
+        // This is a demo/sample template for building your JMH benchmarks. Edit as needed.
+        // Put your benchmark code here
+
+        // Load example data set
+        ListDataSet dataSet = DataSet.Factory.ANIMALS();
+
+        // Create the classifier - for the sake of this example we will use
+        MalletClassifier classifier = new MalletClassifier(DecisionTree);
 
         // Train the classifier using all data
         classifier.trainAll(dataSet);
