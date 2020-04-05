@@ -33,10 +33,14 @@ package ac.upc.edu;
 
 import org.jdmp.core.algorithm.classification.KNNClassifier;
 import org.jdmp.core.algorithm.classification.bayes.NaiveBayesClassifier;
+import org.jdmp.core.algorithm.regression.LinearRegression;
 import org.jdmp.core.dataset.DataSet;
 import org.jdmp.core.dataset.ListDataSet;
 import org.jdmp.mallet.classifier.MalletClassifier;
+import org.jdmp.weka.clusterer.WekaClusterer;
 import org.openjdk.jmh.annotations.*;
+import org.ujmp.core.Matrix;
+import org.ujmp.core.calculation.Calculation;
 
 import java.util.concurrent.TimeUnit;
 
@@ -46,14 +50,10 @@ import static org.jdmp.mallet.classifier.MalletClassifier.MalletClassifiers.Deci
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
 @State(Scope.Benchmark)
 @Fork(value = 2, jvmArgs = {"-Xms2G", "-Xmx2G"})
-
 public class MyBenchmark {
 
     // EXAMPLE KNN USAGE
     public void knnExample() {
-        // This is a demo/sample template for building your JMH benchmarks. Edit as needed.
-        // Put your benchmark code here
-
         // Load example data set
         ListDataSet dataSet = DataSet.Factory.ANIMALS();
 
@@ -74,9 +74,6 @@ public class MyBenchmark {
 
     // EXAMPLE DECISION TREE USAGE
     public void decisionTreeExample() {
-        // This is a demo/sample template for building your JMH benchmarks. Edit as needed.
-        // Put your benchmark code here
-
         // Load example data set
         ListDataSet dataSet = DataSet.Factory.ANIMALS();
 
@@ -93,6 +90,37 @@ public class MyBenchmark {
         // double accuracy = dataSet.getAccuracy();
 
         // System.out.println("accuracy: " + accuracy);
+    }
+
+    // EXAMPLE LINEAR REGRESSION USAGE
+    public void linearRegressionExample() {
+        // Load example data set
+        ListDataSet dataSet = DataSet.Factory.ANIMALS();
+
+        // Create the classifier - for the sake of this example we will use
+        LinearRegression classifier = new LinearRegression();
+
+        // Train the classifier using all data
+        classifier.trainAll(dataSet);
+
+        // Use the classifier to make predictions
+        classifier.predictAll(dataSet);
+
+        // Get the results - no needed for benchmark purposes
+        // double accuracy = dataSet.getAccuracy();
+
+        // System.out.println("accuracy: " + accuracy);
+    }
+
+    // EXAMPLE KMEANS USAGE
+    public void testClusteringKMeans() throws Exception {
+        ListDataSet iris = ListDataSet.Factory.IRIS();
+        WekaClusterer wc = new WekaClusterer(WekaClusterer.WekaClustererType.SimpleKMeans, false);
+        wc.setNumberOfClusters(3);
+        wc.train(iris);
+        wc.predict(iris);
+
+        Matrix result = iris.getPredictedMatrix().sum(Calculation.Ret.NEW, Matrix.ROW, true);
     }
 
     @Benchmark
