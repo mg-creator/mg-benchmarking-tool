@@ -31,6 +31,7 @@
 
 package ac.upc.edu;
 
+import org.jdmp.core.algorithm.classification.KNNClassifier;
 import org.jdmp.core.algorithm.classification.bayes.NaiveBayesClassifier;
 import org.jdmp.core.dataset.DataSet;
 import org.jdmp.core.dataset.ListDataSet;
@@ -45,26 +46,27 @@ import java.util.concurrent.TimeUnit;
 
 public class MyBenchmark {
 
-    // EXAMPLE NAIVE BAYES
-    public void testMethod() {
+    // EXAMPLE KNN USAGE
+    public void knnExample() {
         // This is a demo/sample template for building your JMH benchmarks. Edit as needed.
         // Put your benchmark code here
-        // load example data set
-        ListDataSet dataSet = DataSet.Factory.IRIS();
 
-        // create a classifier
-        NaiveBayesClassifier classifier = new NaiveBayesClassifier();
+        // Load example data set
+        ListDataSet dataSet = DataSet.Factory.ANIMALS();
 
-        // train the classifier using all data
+        // Create the classifier - for the sake of this example we will use
+        KNNClassifier classifier = new KNNClassifier(5);
+
+        // Train the classifier using all data
         classifier.trainAll(dataSet);
 
-        // use the classifier to make predictions
+        // Use the classifier to make predictions
         classifier.predictAll(dataSet);
 
-        // get the results
-        double accuracy = dataSet.getAccuracy();
+        // Get the results - no needed for benchmark purposes
+        // double accuracy = dataSet.getAccuracy();
 
-        System.out.println("accuracy: " + accuracy);
+        // System.out.println("accuracy: " + accuracy);
     }
 
     @Benchmark
