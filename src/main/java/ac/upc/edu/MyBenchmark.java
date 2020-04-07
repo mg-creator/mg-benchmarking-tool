@@ -39,18 +39,130 @@ import org.jdmp.core.dataset.ListDataSet;
 import org.jdmp.mallet.classifier.MalletClassifier;
 import org.jdmp.weka.clusterer.WekaClusterer;
 import org.openjdk.jmh.annotations.*;
+import org.openjdk.jmh.runner.Runner;
+import org.openjdk.jmh.runner.RunnerException;
+import org.openjdk.jmh.runner.options.Options;
+import org.openjdk.jmh.runner.options.OptionsBuilder;
 import org.ujmp.core.Matrix;
 import org.ujmp.core.calculation.Calculation;
 
+import javax.sound.sampled.Line;
 import java.util.concurrent.TimeUnit;
 
 import static org.jdmp.mallet.classifier.MalletClassifier.MalletClassifiers.DecisionTree;
 
-@BenchmarkMode(Mode.All)
+@BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
 @State(Scope.Benchmark)
 @Fork(value = 2, jvmArgs = {"-Xms2G", "-Xmx2G"})
 public class MyBenchmark {
+
+    private ListDataSet ANIMALS = DataSet.Factory.ANIMALS();
+    private ListDataSet IRIS = DataSet.Factory.IRIS();
+
+    private KNNClassifier preTrainKNN = new KNNClassifier(5);
+    private KNNClassifier postTrainKNN = new KNNClassifier(5);
+
+    private MalletClassifier preTrainDT = new MalletClassifier(DecisionTree);
+    private MalletClassifier postTrainDT = new MalletClassifier(DecisionTree);
+
+    private LinearRegression preTrainLR = new LinearRegression();
+    private LinearRegression postTrainLR = new LinearRegression();
+
+    private WekaClusterer preTrainKMEANS;
+    private WekaClusterer postTrainKMEANS;
+
+    public static void main(String[] args) throws RunnerException {
+
+        Options opt = new OptionsBuilder()
+                .include(MyBenchmark.class.getSimpleName())
+                .forks(1)
+                .build();
+
+        new Runner(opt).run();
+    }
+
+    @Setup
+    public void setup() throws Exception {
+        postTrainKNN.trainAll(IRIS);
+        postTrainDT.trainAll(IRIS);
+        postTrainLR.trainAll(IRIS);
+        preTrainKMEANS = new WekaClusterer(WekaClusterer.WekaClustererType.SimpleKMeans, false);
+        postTrainKMEANS = new WekaClusterer(WekaClusterer.WekaClustererType.SimpleKMeans, false);
+        postTrainKMEANS.train(IRIS);
+    }
+
+    @Benchmark
+    @Warmup(iterations = 0)
+    @Measurement(iterations = 1)
+    @BenchmarkMode(Mode.AverageTime)
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
+    public void trainKNN() {
+        preTrainKNN.trainAll(IRIS);
+    }
+
+    @Benchmark
+    @Warmup(iterations = 0)
+    @Measurement(iterations = 1)
+    @BenchmarkMode(Mode.AverageTime)
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
+    public void predictKNN() {
+        postTrainKNN.predictAll(IRIS);
+    }
+
+    @Benchmark
+    @Warmup(iterations = 0)
+    @Measurement(iterations = 1)
+    @BenchmarkMode(Mode.AverageTime)
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
+    public void trainDT() {
+        preTrainDT.trainAll(IRIS);
+    }
+
+    @Benchmark
+    @Warmup(iterations = 0)
+    @Measurement(iterations = 1)
+    @BenchmarkMode(Mode.AverageTime)
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
+    public void predictDT() {
+        postTrainDT.predictAll(IRIS);
+    }
+
+    @Benchmark
+    @Warmup(iterations = 0)
+    @Measurement(iterations = 1)
+    @BenchmarkMode(Mode.AverageTime)
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
+    public void trainLR() {
+        preTrainLR.trainAll(IRIS);
+    }
+
+    @Benchmark
+    @Warmup(iterations = 0)
+    @Measurement(iterations = 1)
+    @BenchmarkMode(Mode.AverageTime)
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
+    public void predictLR() {
+        postTrainLR.predictAll(IRIS);
+    }
+
+    @Benchmark
+    @Warmup(iterations = 0)
+    @Measurement(iterations = 1)
+    @BenchmarkMode(Mode.AverageTime)
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
+    public void trainKMEANS() throws Exception {
+        preTrainKMEANS.train(IRIS);
+    }
+
+    @Benchmark
+    @Warmup(iterations = 0)
+    @Measurement(iterations = 1)
+    @BenchmarkMode(Mode.AverageTime)
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
+    public void predictKMEANS() throws Exception {
+        postTrainKMEANS.predict(IRIS);
+    }
 
     // EXAMPLE KNN USAGE
     public void knnExample() {
@@ -67,9 +179,9 @@ public class MyBenchmark {
         classifier.predictAll(dataSet);
 
         // Get the results - no needed for benchmark purposes
-        // double accuracy = dataSet.getAccuracy();
+        double accuracy = dataSet.getAccuracy();
 
-        // System.out.println("accuracy: " + accuracy);
+        System.out.println("accuracy: " + accuracy);
     }
 
     // EXAMPLE DECISION TREE USAGE
@@ -87,9 +199,9 @@ public class MyBenchmark {
         classifier.predictAll(dataSet);
 
         // Get the results - no needed for benchmark purposes
-        // double accuracy = dataSet.getAccuracy();
+        double accuracy = dataSet.getAccuracy();
 
-        // System.out.println("accuracy: " + accuracy);
+        System.out.println("accuracy: " + accuracy);
     }
 
     // EXAMPLE LINEAR REGRESSION USAGE
@@ -107,9 +219,9 @@ public class MyBenchmark {
         classifier.predictAll(dataSet);
 
         // Get the results - no needed for benchmark purposes
-        // double accuracy = dataSet.getAccuracy();
+        double accuracy = dataSet.getAccuracy();
 
-        // System.out.println("accuracy: " + accuracy);
+        System.out.println("accuracy: " + accuracy);
     }
 
     // EXAMPLE KMEANS USAGE
@@ -121,23 +233,5 @@ public class MyBenchmark {
         wc.predict(iris);
 
         Matrix result = iris.getPredictedMatrix().sum(Calculation.Ret.NEW, Matrix.ROW, true);
-    }
-
-    @Benchmark
-    @Warmup(iterations = 1)
-    @Measurement(iterations = 2)
-    @BenchmarkMode(Mode.AverageTime)
-    @OutputTimeUnit(TimeUnit.MICROSECONDS)
-    public void irisDataSetCreation() {
-        DataSet.Factory.IRIS();
-    }
-
-    @Benchmark
-    @Warmup(iterations = 1)
-    @Measurement(iterations = 2)
-    @BenchmarkMode(Mode.All)
-    @OutputTimeUnit(TimeUnit.MICROSECONDS)
-    public void animalsDataSetCreation() {
-        DataSet.Factory.ANIMALS();
     }
 }
