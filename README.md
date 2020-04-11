@@ -66,3 +66,9 @@ This will create a `target/` directory containing the executable file `benchmark
 ```bash
 java -jar target/benchmarks.jar -prof perf
 ```
+
+For the assembler alternative use:
+
+```bash
+java -jar target/benchmarks.jar -prof perfasm
+```

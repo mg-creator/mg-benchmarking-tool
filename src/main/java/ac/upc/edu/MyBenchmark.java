@@ -57,7 +57,6 @@ import static org.jdmp.mallet.classifier.MalletClassifier.MalletClassifiers.Deci
 @Fork(value = 2, jvmArgs = {"-Xms2G", "-Xmx2G"})
 public class MyBenchmark {
 
-    private ListDataSet ANIMALS = DataSet.Factory.ANIMALS();
     private ListDataSet IRIS = DataSet.Factory.IRIS();
 
     private KNNClassifier preTrainKNN = new KNNClassifier(5);
