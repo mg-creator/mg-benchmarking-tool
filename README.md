@@ -41,7 +41,7 @@ uname -r
 Once you know you can just use `apt` to install your kernel's specific version (e.g. for `5.3.0-42-generic`):
 
 ```bash
-apt install linux-tools-5.3.0-42-generic
+sudo apt install linux-tools-5.3.0-42-generic
 ```
 
 #### Enable

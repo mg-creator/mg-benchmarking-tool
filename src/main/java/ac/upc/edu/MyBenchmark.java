@@ -32,7 +32,6 @@
 package ac.upc.edu;
 
 import org.jdmp.core.algorithm.classification.KNNClassifier;
-import org.jdmp.core.algorithm.classification.bayes.NaiveBayesClassifier;
 import org.jdmp.core.algorithm.regression.LinearRegression;
 import org.jdmp.core.dataset.DataSet;
 import org.jdmp.core.dataset.ListDataSet;
@@ -46,7 +45,6 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 import org.ujmp.core.Matrix;
 import org.ujmp.core.calculation.Calculation;
 
-import javax.sound.sampled.Line;
 import java.util.concurrent.TimeUnit;
 
 import static org.jdmp.mallet.classifier.MalletClassifier.MalletClassifiers.DecisionTree;
