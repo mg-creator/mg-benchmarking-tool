@@ -92,7 +92,7 @@ public class MyBenchmark {
     @Benchmark
     @Warmup(iterations = 0)
     @Measurement(iterations = 1)
-    @BenchmarkMode(Mode.AverageTime)
+    @BenchmarkMode(Mode.All)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public void trainKNN() {
         preTrainKNN.trainAll(IRIS);
@@ -101,7 +101,7 @@ public class MyBenchmark {
     @Benchmark
     @Warmup(iterations = 0)
     @Measurement(iterations = 1)
-    @BenchmarkMode(Mode.AverageTime)
+    @BenchmarkMode(Mode.All)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public void predictKNN() {
         postTrainKNN.predictAll(IRIS);
@@ -110,7 +110,7 @@ public class MyBenchmark {
     @Benchmark
     @Warmup(iterations = 0)
     @Measurement(iterations = 1)
-    @BenchmarkMode(Mode.AverageTime)
+    @BenchmarkMode(Mode.All)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public void trainDT() {
         preTrainDT.trainAll(IRIS);
@@ -119,7 +119,7 @@ public class MyBenchmark {
     @Benchmark
     @Warmup(iterations = 0)
     @Measurement(iterations = 1)
-    @BenchmarkMode(Mode.AverageTime)
+    @BenchmarkMode(Mode.All)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public void predictDT() {
         postTrainDT.predictAll(IRIS);
@@ -128,7 +128,7 @@ public class MyBenchmark {
     @Benchmark
     @Warmup(iterations = 0)
     @Measurement(iterations = 1)
-    @BenchmarkMode(Mode.AverageTime)
+    @BenchmarkMode(Mode.All)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public void trainLR() {
         preTrainLR.trainAll(IRIS);
@@ -137,7 +137,7 @@ public class MyBenchmark {
     @Benchmark
     @Warmup(iterations = 0)
     @Measurement(iterations = 1)
-    @BenchmarkMode(Mode.AverageTime)
+    @BenchmarkMode(Mode.All)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public void predictLR() {
         postTrainLR.predictAll(IRIS);
@@ -146,7 +146,7 @@ public class MyBenchmark {
     @Benchmark
     @Warmup(iterations = 0)
     @Measurement(iterations = 1)
-    @BenchmarkMode(Mode.AverageTime)
+    @BenchmarkMode(Mode.All)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public void trainKMEANS() throws Exception {
         preTrainKMEANS.train(IRIS);
@@ -155,7 +155,7 @@ public class MyBenchmark {
     @Benchmark
     @Warmup(iterations = 0)
     @Measurement(iterations = 1)
-    @BenchmarkMode(Mode.AverageTime)
+    @BenchmarkMode(Mode.All)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public void predictKMEANS() throws Exception {
         postTrainKMEANS.predict(IRIS);
