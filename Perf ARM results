@@ -1,0 +1,504 @@
+Result "ac.upc.edu.MyBenchmark.predictDT":
+  16224.552 us/op
+
+Secondary result "ac.upc.edu.MyBenchmark.predictDT:·perf":
+Perf stats:
+--------------------------------------------------
+
+     <not counted> msec task-clock                                                  
+     <not counted>      context-switches                                            
+     <not counted>      cpu-migrations                                              
+     <not counted>      page-faults                                                 
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      L1-dcache-loads                                             
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+   <not supported>      L1-icache-loads                                             
+   <not supported>      L1-icache-load-misses                                       
+   <not supported>      dTLB-loads                                                  
+   <not supported>      dTLB-load-misses                                            
+   <not supported>      iTLB-loads                                                  
+   <not supported>      iTLB-load-misses                                            
+   <not supported>      L1-dcache-prefetches                                        
+   <not supported>      L1-dcache-prefetch-misses                                   
+
+      20.937947675 seconds time elapsed
+
+      44.521722000 seconds user
+       4.429509000 seconds sys
+
+
+
+     <not counted> msec task-clock                                                  
+     <not counted>      context-switches                                            
+     <not counted>      cpu-migrations                                              
+     <not counted>      page-faults                                                 
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      L1-dcache-loads                                             
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+   <not supported>      L1-icache-loads                                             
+   <not supported>      L1-icache-load-misses                                       
+   <not supported>      dTLB-loads                                                  
+   <not supported>      dTLB-load-misses                                            
+   <not supported>      iTLB-loads                                                  
+   <not supported>      iTLB-load-misses                                            
+   <not supported>      L1-dcache-prefetches                                        
+   <not supported>      L1-dcache-prefetch-misses                                   
+
+      18.982199444 seconds time elapsed
+
+      43.790169000 seconds user
+       4.349888000 seconds sys
+
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+Result "ac.upc.edu.MyBenchmark.predictKMEANS":
+  2127.321 us/op
+
+Secondary result "ac.upc.edu.MyBenchmark.predictKMEANS:·perf":
+Perf stats:
+--------------------------------------------------
+
+     <not counted> msec task-clock                                                  
+     <not counted>      context-switches                                            
+     <not counted>      cpu-migrations                                              
+     <not counted>      page-faults                                                 
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      L1-dcache-loads                                             
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+   <not supported>      L1-icache-loads                                             
+   <not supported>      L1-icache-load-misses                                       
+   <not supported>      dTLB-loads                                                  
+   <not supported>      dTLB-load-misses                                            
+   <not supported>      iTLB-loads                                                  
+   <not supported>      iTLB-load-misses                                            
+   <not supported>      L1-dcache-prefetches                                        
+   <not supported>      L1-dcache-prefetch-misses                                   
+
+      18.984804611 seconds time elapsed
+
+      28.464607000 seconds user
+       3.149205000 seconds sys
+
+
+
+     <not counted> msec task-clock                                                  
+     <not counted>      context-switches                                            
+     <not counted>      cpu-migrations                                              
+     <not counted>      page-faults                                                 
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      L1-dcache-loads                                             
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+   <not supported>      L1-icache-loads                                             
+   <not supported>      L1-icache-load-misses                                       
+   <not supported>      dTLB-loads                                                  
+   <not supported>      dTLB-load-misses                                            
+   <not supported>      iTLB-loads                                                  
+   <not supported>      iTLB-load-misses                                            
+   <not supported>      L1-dcache-prefetches                                        
+   <not supported>      L1-dcache-prefetch-misses                                   
+
+      18.172760861 seconds time elapsed
+
+      28.131159000 seconds user
+       3.489851000 seconds sys
+
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+Result "ac.upc.edu.MyBenchmark.predictKNN":
+  171667.084 us/op
+
+Secondary result "ac.upc.edu.MyBenchmark.predictKNN:·perf":
+Perf stats:
+--------------------------------------------------
+
+     <not counted> msec task-clock                                                  
+     <not counted>      context-switches                                            
+     <not counted>      cpu-migrations                                              
+     <not counted>      page-faults                                                 
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      L1-dcache-loads                                             
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+   <not supported>      L1-icache-loads                                             
+   <not supported>      L1-icache-load-misses                                       
+   <not supported>      dTLB-loads                                                  
+   <not supported>      dTLB-load-misses                                            
+   <not supported>      iTLB-loads                                                  
+   <not supported>      iTLB-load-misses                                            
+   <not supported>      L1-dcache-prefetches                                        
+   <not supported>      L1-dcache-prefetch-misses                                   
+
+      18.690358592 seconds time elapsed
+
+      48.690481000 seconds user
+       2.721457000 seconds sys
+
+
+
+     <not counted> msec task-clock                                                  
+     <not counted>      context-switches                                            
+     <not counted>      cpu-migrations                                              
+     <not counted>      page-faults                                                 
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      L1-dcache-loads                                             
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+   <not supported>      L1-icache-loads                                             
+   <not supported>      L1-icache-load-misses                                       
+   <not supported>      dTLB-loads                                                  
+   <not supported>      dTLB-load-misses                                            
+   <not supported>      iTLB-loads                                                  
+   <not supported>      iTLB-load-misses                                            
+   <not supported>      L1-dcache-prefetches                                        
+   <not supported>      L1-dcache-prefetch-misses                                   
+
+      17.972037321 seconds time elapsed
+
+      64.738959000 seconds user
+       3.783076000 seconds sys
+
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+Result "ac.upc.edu.MyBenchmark.predictLR":
+  17907.121 us/op
+
+Secondary result "ac.upc.edu.MyBenchmark.predictLR:·perf":
+Perf stats:
+--------------------------------------------------
+
+     <not counted> msec task-clock                                                  
+     <not counted>      context-switches                                            
+     <not counted>      cpu-migrations                                              
+     <not counted>      page-faults                                                 
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      L1-dcache-loads                                             
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+   <not supported>      L1-icache-loads                                             
+   <not supported>      L1-icache-load-misses                                       
+   <not supported>      dTLB-loads                                                  
+   <not supported>      dTLB-load-misses                                            
+   <not supported>      iTLB-loads                                                  
+   <not supported>      iTLB-load-misses                                            
+   <not supported>      L1-dcache-prefetches                                        
+   <not supported>      L1-dcache-prefetch-misses                                   
+
+      20.867696825 seconds time elapsed
+
+      50.362551000 seconds user
+       4.280477000 seconds sys
+
+
+
+     <not counted> msec task-clock                                                  
+     <not counted>      context-switches                                            
+     <not counted>      cpu-migrations                                              
+     <not counted>      page-faults                                                 
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      L1-dcache-loads                                             
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+   <not supported>      L1-icache-loads                                             
+   <not supported>      L1-icache-load-misses                                       
+   <not supported>      dTLB-loads                                                  
+   <not supported>      dTLB-load-misses                                            
+   <not supported>      iTLB-loads                                                  
+   <not supported>      iTLB-load-misses                                            
+   <not supported>      L1-dcache-prefetches                                        
+   <not supported>      L1-dcache-prefetch-misses                                   
+
+      19.121803546 seconds time elapsed
+
+      49.145970000 seconds user
+       4.281091000 seconds sys
+
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+Result "ac.upc.edu.MyBenchmark.trainDT":
+  37448.819 us/op
+
+Secondary result "ac.upc.edu.MyBenchmark.trainDT:·perf":
+Perf stats:
+--------------------------------------------------
+
+     <not counted> msec task-clock                                                  
+     <not counted>      context-switches                                            
+     <not counted>      cpu-migrations                                              
+     <not counted>      page-faults                                                 
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      L1-dcache-loads                                             
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+   <not supported>      L1-icache-loads                                             
+   <not supported>      L1-icache-load-misses                                       
+   <not supported>      dTLB-loads                                                  
+   <not supported>      dTLB-load-misses                                            
+   <not supported>      iTLB-loads                                                  
+   <not supported>      iTLB-load-misses                                            
+   <not supported>      L1-dcache-prefetches                                        
+   <not supported>      L1-dcache-prefetch-misses                                   
+
+      18.940001348 seconds time elapsed
+
+      40.626724000 seconds user
+       2.706644000 seconds sys
+
+
+
+     <not counted> msec task-clock                                                  
+     <not counted>      context-switches                                            
+     <not counted>      cpu-migrations                                              
+     <not counted>      page-faults                                                 
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      L1-dcache-loads                                             
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+   <not supported>      L1-icache-loads                                             
+   <not supported>      L1-icache-load-misses                                       
+   <not supported>      dTLB-loads                                                  
+   <not supported>      dTLB-load-misses                                            
+   <not supported>      iTLB-loads                                                  
+   <not supported>      iTLB-load-misses                                            
+   <not supported>      L1-dcache-prefetches                                        
+   <not supported>      L1-dcache-prefetch-misses                                   
+
+      21.563799707 seconds time elapsed
+
+      49.186674000 seconds user
+       3.183495000 seconds sys
+
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+Result "ac.upc.edu.MyBenchmark.trainKMEANS":
+  29949.008 us/op
+
+Secondary result "ac.upc.edu.MyBenchmark.trainKMEANS:·perf":
+Perf stats:
+--------------------------------------------------
+
+     <not counted> msec task-clock                                                  
+     <not counted>      context-switches                                            
+     <not counted>      cpu-migrations                                              
+     <not counted>      page-faults                                                 
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      L1-dcache-loads                                             
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+   <not supported>      L1-icache-loads                                             
+   <not supported>      L1-icache-load-misses                                       
+   <not supported>      dTLB-loads                                                  
+   <not supported>      dTLB-load-misses                                            
+   <not supported>      iTLB-loads                                                  
+   <not supported>      iTLB-load-misses                                            
+   <not supported>      L1-dcache-prefetches                                        
+   <not supported>      L1-dcache-prefetch-misses                                   
+
+      20.948511646 seconds time elapsed
+
+      40.977091000 seconds user
+       2.242097000 seconds sys
+
+
+
+     <not counted> msec task-clock                                                  
+     <not counted>      context-switches                                            
+     <not counted>      cpu-migrations                                              
+     <not counted>      page-faults                                                 
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      L1-dcache-loads                                             
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+   <not supported>      L1-icache-loads                                             
+   <not supported>      L1-icache-load-misses                                       
+   <not supported>      dTLB-loads                                                  
+   <not supported>      dTLB-load-misses                                            
+   <not supported>      iTLB-loads                                                  
+   <not supported>      iTLB-load-misses                                            
+   <not supported>      L1-dcache-prefetches                                        
+   <not supported>      L1-dcache-prefetch-misses                                   
+
+      17.464109390 seconds time elapsed
+
+      42.940232000 seconds user
+       2.601855000 seconds sys
+
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+Result "ac.upc.edu.MyBenchmark.trainKNN":
+  0.009 us/op
+
+Secondary result "ac.upc.edu.MyBenchmark.trainKNN:·perf":
+Perf stats:
+--------------------------------------------------
+
+     <not counted> msec task-clock                                                  
+     <not counted>      context-switches                                            
+     <not counted>      cpu-migrations                                              
+     <not counted>      page-faults                                                 
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      L1-dcache-loads                                             
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+   <not supported>      L1-icache-loads                                             
+   <not supported>      L1-icache-load-misses                                       
+   <not supported>      dTLB-loads                                                  
+   <not supported>      dTLB-load-misses                                            
+   <not supported>      iTLB-loads                                                  
+   <not supported>      iTLB-load-misses                                            
+   <not supported>      L1-dcache-prefetches                                        
+   <not supported>      L1-dcache-prefetch-misses                                   
+
+      17.386686754 seconds time elapsed
+
+      22.029663000 seconds user
+       0.972028000 seconds sys
+
+
+
+     <not counted> msec task-clock                                                  
+     <not counted>      context-switches                                            
+     <not counted>      cpu-migrations                                              
+     <not counted>      page-faults                                                 
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      L1-dcache-loads                                             
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+   <not supported>      L1-icache-loads                                             
+   <not supported>      L1-icache-load-misses                                       
+   <not supported>      dTLB-loads                                                  
+   <not supported>      dTLB-load-misses                                            
+   <not supported>      iTLB-loads                                                  
+   <not supported>      iTLB-load-misses                                            
+   <not supported>      L1-dcache-prefetches                                        
+   <not supported>      L1-dcache-prefetch-misses                                   
+
+      17.565180481 seconds time elapsed
+
+      22.416808000 seconds user
+       0.918821000 seconds sys
+
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+Result "ac.upc.edu.MyBenchmark.trainLR":
+  5788.529 us/op
+
+Secondary result "ac.upc.edu.MyBenchmark.trainLR:·perf":
+Perf stats:
+--------------------------------------------------
+
+     <not counted> msec task-clock                                                  
+     <not counted>      context-switches                                            
+     <not counted>      cpu-migrations                                              
+     <not counted>      page-faults                                                 
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      L1-dcache-loads                                             
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+   <not supported>      L1-icache-loads                                             
+   <not supported>      L1-icache-load-misses                                       
+   <not supported>      dTLB-loads                                                  
+   <not supported>      dTLB-load-misses                                            
+   <not supported>      iTLB-loads                                                  
+   <not supported>      iTLB-load-misses                                            
+   <not supported>      L1-dcache-prefetches                                        
+   <not supported>      L1-dcache-prefetch-misses                                   
+
+      18.440443307 seconds time elapsed
+
+      46.380667000 seconds user
+       3.295984000 seconds sys
+
+
+
+     <not counted> msec task-clock                                                  
+     <not counted>      context-switches                                            
+     <not counted>      cpu-migrations                                              
+     <not counted>      page-faults                                                 
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+   <not supported>      L1-dcache-loads                                             
+   <not supported>      L1-dcache-load-misses                                       
+   <not supported>      LLC-loads                                                   
+   <not supported>      LLC-load-misses                                             
+   <not supported>      L1-icache-loads                                             
+   <not supported>      L1-icache-load-misses                                       
+   <not supported>      dTLB-loads                                                  
+   <not supported>      dTLB-load-misses                                            
+   <not supported>      iTLB-loads                                                  
+   <not supported>      iTLB-load-misses                                            
+   <not supported>      L1-dcache-prefetches                                        
+   <not supported>      L1-dcache-prefetch-misses                                   
+
+      18.397561445 seconds time elapsed
+
+      40.763051000 seconds user
+       3.285860000 seconds sys
+
+WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
